@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "./model;gen";
+
+message BranchRequest {
+  string branch_name = 1;
+}
+
+message ErigonResponse {
+  string msg = 1;
+}
+
+service ErigonService {
+  rpc BuildFrom(BranchRequest) returns (ErigonResponse);
+}

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-"os/exec"
+	"os/exec"
 )
 
 func Start(args ...string) (p *os.Process, err error) {
@@ -43,7 +43,13 @@ func main() {
 
 	//args := []string {"C:\\Program Files\\Git\\cmd\\git.exe", "commit", "-m", "testing commit"}
 
-	args := []string {"C:\\Program Files\\Git\\cmd\\git.exe", "add", "."}
+	//args := []string {"C:\\Program Files\\Git\\cmd\\git.exe", "push", "--set-upstream", "https://github.com/leonardchinonso/testingGoWithGit.git", "master"}
+
+	//args := []string {"C:\\Program Files\\Git\\cmd\\git.exe", "branch"}
+
+	//args := []string {"C:\\Program Files\\Git\\cmd\\git.exe", "checkout", "-b", "testing-check-new-b"}
+
+	args := []string{"C:\\Program Files\\Git\\cmd\\git.exe", "rev-parse", "--verify", "develop"}
 
 	var procAttr os.ProcAttr
 	procAttr.Files = []*os.File{os.Stdin, os.Stdout, os.Stderr}
@@ -55,7 +61,5 @@ func main() {
 		fmt.Println("P is: ", p)
 	}
 }
-
-
 
 //args := []string{"C:\\Users\\USER\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe", "C:\\Users\\USER\\Documents\\Learning\\testingGo\\testing.py"}
