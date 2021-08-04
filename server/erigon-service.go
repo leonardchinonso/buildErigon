@@ -40,7 +40,7 @@ func (es *erigonService) checkOutBranchAndRunErigon(branchName string) {
 	log.Printf("Checking out branch: %v", branchName)
 
 	if runtime.GOOS != "windows" {
-		fmt.Println("Can only execute on Windows machines")
+		fmt.Println("Can only execute on Windows machines") // TODO: clean up for all environments
 	} else {
 		es.execute(branchName)
 	}

@@ -16,11 +16,11 @@ func main() {
 	defer func(path string) {
 		err := os.RemoveAll(path)
 		if err != nil {
-			fmt.Errorf("Cannot remove this folder %s", err)
+			log.Fatal(fmt.Errorf("cannot remove this folder %s", err))
 		}
 	}(dir) // clean up
 
-	file := filepath.Join(dir, "tmpfile")
+	file := filepath.Join(dir, "tempFile")
 	if err := os.WriteFile(file, []byte("content"), 0666); err != nil {
 		log.Fatal(err)
 	}
